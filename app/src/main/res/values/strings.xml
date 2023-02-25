@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application Laundary</string>
+    <string name="facebook_app_id">955369195638999</string>
+    <string name="facebook_client_token">1db7d202e9dabb117c9e4c91355c52b0</string>
+    <string name="open">Open Navigation Drawer</string>
+    <string name="close">Close Navigation Drawer</string>
+    <string name="logoname">Laundry</string>
+    <string name="phone">+91</string>
+    <string name="ShopeName"></string>
+    <string name="OwnerName"></string>
+    <string name="ShopNumber"></string>
+    <string name="ShopLocation"></string>
+</resources>
