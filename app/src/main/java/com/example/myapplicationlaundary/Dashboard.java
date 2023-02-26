@@ -27,6 +27,7 @@ import java.util.Objects;
 
 public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
+    Button button;
 
 
     NavigationView navigationView;
