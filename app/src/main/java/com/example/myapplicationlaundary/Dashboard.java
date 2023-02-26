@@ -100,6 +100,10 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
                 Toast.makeText(Dashboard.this, "Signout successful", Toast.LENGTH_SHORT).show();
                 finish();
                break;
+            case R.id.Profile:
+                Intent intent=new Intent(this,User_Details.class);
+                startActivity(intent);
+                break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
 
