@@ -2,9 +2,10 @@ package com.example.myapplicationlaundary;
 
 public class ContactModel {
 
-    String shopName,shopOwnerName,shopAddress,shopNumber,shopImage;
+    String shopName,shopOwnerName,shopAddress,shopImage;
+    long shopNumber;
 
-    public ContactModel(String shopName, String shopOwnerName, String shopAddress, String shopNumber, String shopImage) {
+    public ContactModel(String shopName, String shopOwnerName, String shopAddress, long shopNumber, String shopImage) {
         this.shopName = shopName;
         this.shopOwnerName = shopOwnerName;
         this.shopAddress = shopAddress;
@@ -40,11 +41,11 @@ public class ContactModel {
         this.shopAddress = shopAddress;
     }
 
-    public String getShopNumber() {
+    public long getShopNumber() {
         return shopNumber;
     }
 
-    public void setShopNumber(String shopNumber) {
+    public void setShopNumber(long shopNumber) {
         this.shopNumber = shopNumber;
     }
 

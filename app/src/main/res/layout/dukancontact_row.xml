@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -30,13 +29,13 @@
             android:background="@color/teal_200"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="40dp"
-           android:layout_marginTop="50dp">
+            android:padding="20dp"
+           android:layout_marginTop="10dp">
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="100dp"
-                android:layout_height="70dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:background="@color/white"
                 android:contentDescription="Contact Image"
                 android:src="@drawable/bk"></ImageView>
@@ -44,7 +43,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="11dp"
+                android:layout_marginLeft="15dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -53,7 +52,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ShopeName"
                     android:hint="Shop Name"
-                    android:textSize="22sp"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
                     android:textStyle="bold"
                     />
 
@@ -62,7 +62,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/OwnerName"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:hint="Owner Name"
                     android:textStyle="normal" />
 
@@ -71,7 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ShopNumber"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:hint="Shop Number"
                     android:textStyle="normal" />
                 <TextView
@@ -79,7 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ShopLocation"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:hint="Shop Location"
                     android:textStyle="normal" />
 

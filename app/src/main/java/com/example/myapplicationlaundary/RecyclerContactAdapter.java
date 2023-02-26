@@ -38,7 +38,7 @@ public class RecyclerContactAdapter<view> extends RecyclerView.Adapter<RecyclerC
         Picasso.get().load(shopList.get(position).shopImage).centerCrop().fit().into(holder.imgdukan);
         holder.textShopName.setText(shopList.get(position).shopName);
         holder.txtName.setText(shopList.get(position).shopOwnerName);
-        holder.txtNumber.setText(shopList.get(position).shopNumber);
+        holder.txtNumber.setText(String.valueOf(shopList.get(position).shopNumber));
         holder.textShopLocation.setText(shopList.get(position).shopAddress);
     }
 
