@@ -8,7 +8,7 @@
     tools:context=".Dashboard"
     android:fitsSystemWindows="true"
     android:background="@color/teal_700"
-    tools:openDrawer="">
+    tools:openDrawer="start">
 
     <RelativeLayout
         android:layout_width="match_parent"
