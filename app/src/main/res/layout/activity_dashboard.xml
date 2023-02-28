@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".Dashboard"
     android:fitsSystemWindows="true"
-    android:background="@color/teal_700"
-    tools:openDrawer="start">
+    android:background="@color/purple_200">
+<!--    tools:openDrawer="start">-->
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -53,7 +53,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="200dp"
                 android:id="@+id/image1"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/shirt2">
@@ -68,25 +68,36 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="16dp"></View>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DRY CLEANING"
-                android:textSize="30dp"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                ></TextView>
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:layout_marginTop="90dp"
-                android:text="Dress and Shine"
-                android:textColor="@color/white"
+               <TextView
+                   android:id="@+id/dry"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentTop="true"
+                   android:layout_alignParentEnd="true"
+                   android:layout_marginTop="39dp"
+                   android:layout_marginEnd="82dp"
 
-                android:textSize="20dp"></TextView>
+                   android:text="DRY CLEANING"
+                   android:textColor="@color/white"
+                   android:textSize="30dp"
+                   android:textStyle="bold"></TextView>
+
+               <TextView
+
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="150dp"
+                   android:layout_marginTop="65dp"
+                   android:text="Dress and Shine"
+                   android:textColor="@color/white"
+
+
+                   android:textSize="20dp"></TextView>
+           </RelativeLayout>
 
 
         </androidx.cardview.widget.CardView>
@@ -95,7 +106,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewimage2"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="200dp"
             android:layout_below="@id/cardViewimage1"
             app:cardCornerRadius="11dp"
             app:cardElevation="5dp"
@@ -103,7 +114,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/wash">
 
@@ -131,7 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="100dp"
                 android:text="Never let your clothes pile up again"
                 android:textColor="@color/white"
 
@@ -142,7 +153,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewimage3"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="200dp"
             android:layout_below="@id/cardViewimage2"
             app:cardCornerRadius="11dp"
             app:cardElevation="5dp"
@@ -179,7 +190,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
-                android:layout_marginTop="95dp"
+                android:layout_marginTop="100dp"
                 android:text="Let us wash your Blankets and Car"
                 android:textColor="@color/white"
 
