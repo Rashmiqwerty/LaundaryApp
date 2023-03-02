@@ -12,9 +12,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Design.Light.NoActionBar"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Dashboard3"
+            android:exported="false" />
+        <activity
+            android:name=".Shop_Item_List_Activity"
+            android:exported="false" />
         <activity
             android:name=".User_Details"
             android:exported="false" />
