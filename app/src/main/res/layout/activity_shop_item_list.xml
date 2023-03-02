@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,54 +7,411 @@
     tools:context=".Shop_Item_List_Activity"
     android:background="@color/gray">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_200"
-        app:titleTextColor="@color/white"
-        app:navigationIcon="@drawable/baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0">
+        android:id="@+id/appBar"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laundry"
+            android:textSize="18sp"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:id="@+id/text"/>
 
     </androidx.appcompat.widget.Toolbar>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_shop_item"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/placeOrder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <Button
-        android:id="@+id/placeOrder"
-        android:layout_width="0dp"
+    </com.google.android.material.appbar.AppBarLayout>
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@color/purple_200"
+        android:text="shirt"
+        android:layout_below="@id/appBar"
+        android:textSize="20dp"
+        android:id="@+id/itemShirt"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_below="@id/appBar"
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        android:layout_toRightOf="@id/itemShirt"
+        android:id="@+id/itemShirtPrice"
+        />
+    <TextView
+        android:id="@+id/shirtitemadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="18dp"
+        android:layout_below="@id/appBar"
+        android:layout_toRightOf="@id/itemShirtPrice"
+        android:paddingLeft="60dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/total_number_of_Shirt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18dp"
+        android:layout_below="@id/appBar"
+        android:layout_toRightOf="@id/shirtitemadd"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/shirtitemminus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="18dp"
+        android:layout_below="@id/appBar"
+        android:layout_toRightOf="@id/total_number_of_Shirt"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+       android:id="@+id/shirtequalsto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:textSize="18dp"
+        android:layout_below="@id/appBar"
+        android:layout_toRightOf="@id/shirtitemminus"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+         android:id="@+id/total_Shirt_price_Sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18dp"
+        android:layout_below="@id/appBar"
+        android:layout_toRightOf="@id/shirtequalsto"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jeans"
+        android:layout_below="@id/itemShirt"
+        android:textSize="20dp"
+        android:id="@+id/itemJeans"/>
+
+    <TextView
+        android:id="@+id/itemJeansPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemShirt"
+        android:layout_toRightOf="@id/itemJeans"
+        android:paddingLeft="20dp"
+        android:text="0"
+        android:textSize="20dp" />
+    <TextView
+        android:id="@+id/jeansitemadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="18dp"
+        android:layout_below="@id/shirtitemadd"
+        android:layout_toRightOf="@id/itemJeansPrice"
+        android:paddingLeft="45dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/jeans_Quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18dp"
+        android:layout_below="@id/total_number_of_Shirt"
+        android:layout_toRightOf="@id/jeansitemadd"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/jeansitemminus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="18dp"
+        android:layout_below="@id/shirtitemminus"
+        android:layout_toRightOf="@id/jeans_Quantity"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/jeansequalsto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:textSize="18dp"
+        android:layout_below="@id/shirtequalsto"
+        android:layout_toRightOf="@id/jeansitemminus"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/total_Jeans_price_Sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18dp"
+        android:layout_below="@id/total_Shirt_price_Sum"
+        android:layout_toRightOf="@id/jeansequalsto"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="suit"
+        android:layout_below="@id/itemJeans"
+        android:textSize="20dp"
+        android:id="@+id/itemSuit"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_below="@id/itemJeans"
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        android:layout_toRightOf="@id/itemJeans"
+        android:id="@+id/itemSuitPrice"
+        />
+
+    <TextView
+        android:id="@+id/suititemadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jeansitemadd"
+        android:layout_toRightOf="@id/itemSuitPrice"
+        android:paddingLeft="45dp"
+        android:text="+"
+        android:textSize="18dp"></TextView>
+
+    <TextView
+        android:id="@+id/suit_Quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18dp"
+        android:layout_below="@id/jeans_Quantity"
+        android:layout_toRightOf="@id/suititemadd"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/suititemminus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="18dp"
+        android:layout_below="@id/jeansitemminus"
+        android:layout_toRightOf="@id/suit_Quantity"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/suitequalsto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:textSize="18dp"
+        android:layout_below="@id/jeansequalsto"
+        android:layout_toRightOf="@id/suititemminus"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/total_Suit_price_Sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18dp"
+        android:layout_below="@id/total_Jeans_price_Sum"
+        android:layout_toRightOf="@id/jeansequalsto"
+        android:paddingLeft="20dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saree"
+        android:layout_below="@id/itemSuit"
+        android:textSize="20dp"
+        android:id="@+id/itemSaree"/>
+
+    <TextView
+        android:id="@+id/itemSareePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemSuitPrice"
+
+        android:layout_toRightOf="@id/itemSuit"
+        android:paddingLeft="20dp"
+        android:text="0"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/sareeitemadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="18dp"
+        android:layout_below="@id/suititemadd"
+        android:layout_toRightOf="@id/itemSareePrice"
+        android:paddingLeft="65dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/saree_Quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/suit_Quantity"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="0dp"
+        android:layout_toRightOf="@id/sareeitemadd"
+        android:paddingLeft="20dp"
+        android:text="0"
+        android:textSize="18dp"></TextView>
+    <TextView
+        android:id="@+id/sareeitemminus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="18dp"
+        android:layout_below="@id/suititemminus"
+        android:layout_toRightOf="@id/saree_Quantity"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/sareeequalsto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:textSize="18dp"
+        android:layout_below="@id/suitequalsto"
+        android:layout_toRightOf="@id/sareeitemminus"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/total_Saree_price_Sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18dp"
+        android:layout_below="@id/total_Suit_price_Sum"
+        android:layout_toRightOf="@id/sareeequalsto"
+        android:paddingLeft="20dp"
+        ></TextView>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kurta"
+        android:layout_below="@id/itemSaree"
+        android:textSize="20dp"
+        android:id="@+id/itemKurta"/>
+
+    <TextView
+        android:id="@+id/itemKurtaPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemSareePrice"
+
+        android:layout_toRightOf="@id/itemKurta"
+        android:paddingLeft="20dp"
+        android:text="0"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/kurtaitemadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="18dp"
+        android:layout_below="@id/sareeitemadd"
+        android:layout_toRightOf="@id/itemKurtaPrice"
+        android:paddingLeft="50dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/kurta_Quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18dp"
+        android:layout_below="@id/saree_Quantity"
+        android:layout_toRightOf="@id/kurtaitemadd"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/kurtaitemminus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="18dp"
+        android:layout_below="@id/sareeitemminus"
+        android:layout_toRightOf="@id/kurta_Quantity"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/kurtaqualsto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:textSize="18dp"
+        android:layout_below="@id/sareeequalsto"
+        android:layout_toRightOf="@id/kurtaitemminus"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/total_Kurta_price_Sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18dp"
+        android:layout_below="@id/total_Saree_price_Sum"
+        android:layout_toRightOf="@+id/kurtaqualsto"
+        android:paddingLeft="20dp"
+        ></TextView>
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total  Rs:"
+        android:textSize="20dp"
+        android:paddingRight="20dp"
+        android:layout_below="@id/itemKurta"
+        ></TextView>
+    <TextView
+        android:id="@+id/total_Sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20dp"
+        android:paddingRight="120dp"
+        android:layout_toRightOf="@id/total"
+        android:layout_below="@id/itemKurta"
+        ></TextView>
+    <Button
+        android:id="@+id/PlaceOrderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemKurtaPrice"
         android:text="Place Order"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1"
-        app:layout_constraintWidth_percent=".9">
-
-    </Button>
+        android:layout_toRightOf="@id/total_Sum"
+        android:paddingLeft="30dp"
+        ></Button>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</RelativeLayout>
 

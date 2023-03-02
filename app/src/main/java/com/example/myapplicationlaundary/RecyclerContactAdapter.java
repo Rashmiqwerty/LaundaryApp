@@ -45,6 +45,19 @@ public class RecyclerContactAdapter<view> extends RecyclerView.Adapter<RecyclerC
         holder.txtName.setText(shopList.get(position).shopOwnerName);
         holder.txtNumber.setText(String.valueOf(shopList.get(position).shopNumber));
         holder.textShopLocation.setText(shopList.get(position).shopAddress);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context,Shop_Item_List_Activity.class);
+                i.putExtra("shirt",shopList.get(position).getItemShirtPrice());
+                i.putExtra("jeans",shopList.get(position).getItemJeansPrice());
+                i.putExtra("kurta",shopList.get(position).getItemKurtaPrice());
+                i.putExtra("saree",shopList.get(position).getItemSareePrice());
+                i.putExtra("suit",shopList.get(position).getItemSuitPrice());
+                context.startActivity(i);
+
+            }
+        });
     }
 
     @Override
@@ -55,7 +68,7 @@ public class RecyclerContactAdapter<view> extends RecyclerView.Adapter<RecyclerC
     public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView txtName,txtNumber,textShopName,textShopLocation;
         ImageView imgdukan;
-        LinearLayout liRow;
+
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             imgdukan=itemView.findViewById(R.id.image);
@@ -63,8 +76,7 @@ public class RecyclerContactAdapter<view> extends RecyclerView.Adapter<RecyclerC
             textShopName=itemView.findViewById(R.id.textShopName);
             txtName=itemView.findViewById(R.id.textOwnerName);
             txtNumber=itemView.findViewById(R.id.textShopNumber);
-            liRow=itemView.findViewById(R.id.liRow);
-            liRow.setOnClickListener(this);
+
         }
 
         @Override
