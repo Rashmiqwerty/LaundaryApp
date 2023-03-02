@@ -72,6 +72,8 @@ public class RecyclerContactAdapter<view> extends RecyclerView.Adapter<RecyclerC
             int position=this.getAdapterPosition();
 
             Toast.makeText(context, "The Position is "+String.valueOf(position), Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(context,Shop_Item_List_Activity.class);
+            context.startActivity(intent);
 //            startActivity(new Intent(RecyclerContactAdapter.this, Shop_Item_List_Activity.class));
 //            finish();
         }
