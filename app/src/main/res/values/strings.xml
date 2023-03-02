@@ -6,8 +6,13 @@
     <string name="close">Close Navigation Drawer</string>
     <string name="logoname">Laundry</string>
     <string name="phone">+91</string>
+
     <string name="ShopeName"></string>
     <string name="OwnerName"></string>
     <string name="ShopNumber"></string>
     <string name="ShopLocation"></string>
+
+    <string name="ItemPrice"></string>
+    <string name="ItemQuantity"></string>
+    <string name="ItemName"></string>
 </resources>

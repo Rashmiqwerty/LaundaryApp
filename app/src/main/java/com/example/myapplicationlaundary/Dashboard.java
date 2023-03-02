@@ -32,7 +32,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
 
     NavigationView navigationView;
     Toolbar toolbar;
-    ImageView imageView1;
+    ImageView imageView1,imageView2;
     CardView cv1;
 
 
@@ -47,6 +47,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.activity_dashboard);
         cv1=findViewById(R.id.cardViewimage1);
         imageView1=findViewById(R.id.image1);
+        imageView2=findViewById(R.id.image2);
         cv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +58,12 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Dashboard.this,Dashboard2.class));
+            }
+        });
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this,Dashboard3.class));
             }
         });
         drawerLayout =findViewById(R.id.drawer_layout);
