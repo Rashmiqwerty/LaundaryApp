@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,8 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Shop_Item_List_Activity extends AppCompatActivity {
     Toolbar toolbar;
+    FirebaseAuth firebaseAuth;
 
     TextView shirtPrice,suitPrice,sareePrice,jeansPrice,kurtaPrice;
     TextView shirtitemadd,total_number_of_Shirt,shirtitemminus,total_Shirt_price_Sum;
@@ -21,7 +25,7 @@ public class Shop_Item_List_Activity extends AppCompatActivity {
     TextView sareeitemadd,saree_Quantity,sareeitemminus,total_Saree_price_Sum;
     TextView kurtaitemadd,kurta_Quantity,kurtaitemminus,total_Kurta_price_Sum;
     TextView total_Sum;
-    Button PlaceOrderButton;
+    Button placeOrderButton;
     int ShirtCount=0;
     int SuitCount=0;int SareeCount=0;int KurtaCount=0;
     int JeansCount=0;
@@ -32,6 +36,7 @@ public class Shop_Item_List_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_item_list);
+        firebaseAuth=FirebaseAuth.getInstance();
         shirtPrice = findViewById(R.id.itemShirtPrice);
         suitPrice = findViewById(R.id.itemSuitPrice);
         sareePrice=findViewById(R.id.itemSareePrice);
@@ -45,17 +50,17 @@ public class Shop_Item_List_Activity extends AppCompatActivity {
 
         jeansitemadd=findViewById(R.id.jeansitemadd);
         jeans_Quantity=findViewById(R.id.jeans_Quantity);
-        jeansitemminus=findViewById(R.id.jeansitemadd);
+        jeansitemminus=findViewById(R.id.jeansitemminus);
         total_Jeans_price_Sum=findViewById(R.id.total_Jeans_price_Sum);
 
         suititemadd=findViewById(R.id.suititemadd);
-        suit_Quantity=findViewById(R.id.saree_Quantity);
+        suit_Quantity=findViewById(R.id.suit_Quantity);
         suititemminus=findViewById(R.id.suititemminus);
         total_Suit_price_Sum=findViewById(R.id.total_Suit_price_Sum);
 
         sareeitemadd=findViewById(R.id.sareeitemadd);
         saree_Quantity=findViewById(R.id.saree_Quantity);
-        sareeitemminus=findViewById(R.id.suititemminus);
+        sareeitemminus=findViewById(R.id.sareeitemminus);
         total_Saree_price_Sum=findViewById(R.id.total_Saree_price_Sum);
 
         kurtaitemadd=findViewById(R.id.kurtaitemadd);
@@ -64,9 +69,11 @@ public class Shop_Item_List_Activity extends AppCompatActivity {
         total_Kurta_price_Sum=findViewById(R.id.total_Kurta_price_Sum);
 
 
-
         total_Sum=findViewById(R.id.total_Sum);
-        PlaceOrderButton=findViewById(R.id.PlaceOrderButton);
+        placeOrderButton=findViewById(R.id.PlaceOrderButton);
+
+
+
 
         long shirt = getIntent().getLongExtra("shirt",0);
         shirtPrice.setText(String.valueOf(shirt));
@@ -78,6 +85,7 @@ public class Shop_Item_List_Activity extends AppCompatActivity {
         kurtaPrice.setText(String.valueOf(kurta));
         long jeans=getIntent().getLongExtra("jeans",0);
         jeansPrice.setText(String.valueOf(jeans));
+
 
         shirtitemadd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -313,6 +321,48 @@ public class Shop_Item_List_Activity extends AppCompatActivity {
             }
         };
        kurta_Quantity.addTextChangedListener(textWatcherKurta);
+
+       TextWatcher textWatcherTotal = new TextWatcher() {
+           @Override
+           public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+           }
+
+           @Override
+           public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+               int t1=Integer.parseInt(total_Shirt_price_Sum.getText().toString());
+               int t2=Integer.parseInt(total_Jeans_price_Sum.getText().toString());
+               int t3=Integer.parseInt(total_Saree_price_Sum.getText().toString());
+               int t4=Integer.parseInt(total_Suit_price_Sum.getText().toString());
+               int t5=Integer.parseInt(total_Kurta_price_Sum.getText().toString());
+               total_Sum.setText(""+(t1+t2+t3+t4+t5));
+           }
+
+           @Override
+           public void afterTextChanged(Editable editable) {
+
+           }
+       };
+        total_Shirt_price_Sum.addTextChangedListener(textWatcherTotal);
+        total_Jeans_price_Sum.addTextChangedListener(textWatcherTotal);
+        total_Kurta_price_Sum.addTextChangedListener(textWatcherTotal);
+        total_Saree_price_Sum.addTextChangedListener(textWatcherTotal);
+        total_Suit_price_Sum.addTextChangedListener(textWatcherTotal);
+        placeOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Shop_Item_List_Activity.this,PlaceOrderActivity.class);
+                i.putExtra("totalPrice",total_Sum.getText());
+                i.putExtra("totalShirt",""+total_number_of_Shirt.getText());
+                i.putExtra("totalSaree",""+saree_Quantity.getText());
+                i.putExtra("totalSuit",""+suit_Quantity.getText());
+                i.putExtra("totalKurta",""+kurta_Quantity.getText());
+                i.putExtra("totalJeans",""+jeans_Quantity.getText());
+                startActivity(i);
+
+            }
+        });
+
 
     }
 

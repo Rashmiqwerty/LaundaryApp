@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlaceOrderActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/appBar"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/toolbar">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laundry"
+                android:textSize="18sp"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/black"
+                android:id="@+id/text"/>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appBar"
+        android:width="200dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Address"
+        android:layout_marginTop="50dp"
+        android:id="@+id/userAddress"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="items"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/userAddress"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/finalItems"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Price: "
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/finalItems"
+        android:layout_toLeftOf="@id/finalPrice"
+        android:id="@+id/price"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="price"
+        android:textSize="20dp"
+        android:paddingLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/finalItems"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/finalPrice"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proceed To Payment"
+        android:id="@+id/buttonPayment"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/price"
+        android:layout_marginRight="10dp"
+/>
+
+</RelativeLayout>

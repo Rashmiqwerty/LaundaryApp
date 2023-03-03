@@ -50,11 +50,6 @@ public class User_Details extends AppCompatActivity {
             }
         });
 
-
-
     }
-
-
-
 
 }
